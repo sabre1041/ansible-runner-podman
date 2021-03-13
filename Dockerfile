@@ -1,8 +1,8 @@
-FROM quay.io/ansible/ansible-runner:stable-2.9-devel
+FROM registry.redhat.io/ubi8/ubi:latest
 
-RUN pip install ansible-builder && \
-    yum install -y podman && \
+RUN yum install -y python3-pip podman && \
     yum clean all && \
+    pip3 install ansible-builder && \
     cp /etc/containers/storage.conf /etc/containers/storage.conf.orig && \
     sed -i 's/driver = "overlay"/driver = "vfs"/' /etc/containers/storage.conf && \
     cp /usr/share/containers/containers.conf /etc/containers/ && \
