@@ -10,5 +10,5 @@
 Execute the following command to build the image
 
 ```
-podman built -t <image_destination> .
+podman build -t <image_destination> .
 ```
