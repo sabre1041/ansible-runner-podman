@@ -1,4 +1,4 @@
-FROM registry.redhat.io/ansible-automation-platform-20-early-access/ansible-builder-rhel8:2.0.0
+FROM registry.redhat.io/ansible-automation-platform-21/ansible-builder-rhel8:1.0
 
 RUN microdnf install -y  podman && \
     microdnf clean all && \
